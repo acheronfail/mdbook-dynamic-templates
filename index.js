@@ -88,7 +88,7 @@
           value = fallback;
           input.value = "";
         } else {
-          value = templateValues[template] = input.value;
+          value = (templateValues[template] = input.value) || fallback;
         }
 
         document
