@@ -66,13 +66,13 @@ Add the following to `book.toml`:
 ```toml
 # Add the dynamic templates styles and scripts to your mdbook.
 [output.html]
-additional-js = ["dynamic-templates/index.js"]
-additional-css = ["dynamic-templates/index.css"]
+additional-js = ["mdbook-dynamic-templates/index.js"]
+additional-css = ["mdbook-dynamic-templates/index.css"]
 
 # The preprocessor ensures that if the renderer is not the HTML renderer then the
 # templates will be replaced with fallback values.
 [preprocessor.dynamic-templates]
-command = "dynamic-templates/preprocessor.py"
+command = "mdbook-dynamic-templates/preprocessor.py"
 ```
 
 ## Defining Templates
