@@ -153,8 +153,6 @@
           return;
         }
 
-        console.log("walking");
-
         // Replace template inside code blocks.
         // Be careful since `innerHTML` recreates all child nodes with new nodes, so if there are
         // any event listeners attached to the child nodes than this will break them.
