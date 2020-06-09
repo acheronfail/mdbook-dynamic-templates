@@ -4,7 +4,7 @@ This is an addon for [`mdbook`] which adds support for "Dynamic Templates".
 
 ## What are Dynamic Templates?
 
-A Dynamic Templates is just a magic string, like `__REPLACE_ME__`. What this addon will do is search
+A Dynamic Template is just a magic string, like `__REPLACE_ME__`. What this addon will do is search
 for all occurrences of `__REPLACE_ME__` in `<code>` tags and replace it will a value that can be
 changed when viewing the webpage (hence "dynamic").
 
