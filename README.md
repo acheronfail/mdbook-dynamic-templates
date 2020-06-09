@@ -86,4 +86,8 @@ The templates file should have the following format:
 ]
 ```
 
+## License
+
+Either the `MIT`, `Unlicense` or `Apache 2.0`; at your option. See the `LICENSE-*` files in the repository.
+
 [`mdbook`]: https://github.com/rust-lang/mdBook/
