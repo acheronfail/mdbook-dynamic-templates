@@ -57,6 +57,7 @@ Bask in the glory of Dynamic Templates.
 Add the following to `book.toml`:
 
 ```toml
+# Add the dynamic templates styles and scripts to your mdbook.
 [output.html]
 additional-js = ["dynamic-templates/index.js"]
 additional-css = ["dynamic-templates/index.css"]
