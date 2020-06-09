@@ -4,28 +4,28 @@ import json
 import os
 import sys
 
+TEMPLATES_JSON_PATH = os.path.join(os.getcwd(), 'src', 'dynamic-templates.json')
+TEMPLATES_JSON = json.load(open(TEMPLATES_JSON_PATH))
+
+def process_chapter(ch):
+  for d in TEMPLATES_JSON:
+    ch['content'] = ch['content'].replace(d['template'], d['fallback'])
+  for c in ch['sub_items']:
+    process_chapter(c['Chapter'])
+
+# Parse arguments.
 if len(sys.argv) > 1:
     if sys.argv[1] == 'supports':
         # sys.argv[2] is the renderer name
         sys.exit(0)
 
-# Read context and book from mdbook.
+# Read context and book from stdin given to us by mdbook.
 context, book = json.load(sys.stdin)
 
-TEMPLATES_JSON_PATH = os.path.join(os.getcwd(), 'src', 'dynamic-templates.json')
-TEMPLATES_JSON = json.load(open(TEMPLATES_JSON_PATH))
+# Replace with fallback host for non-HTML renderers.
+if context['renderer'] != 'html':
+  for section in book['sections']:
+    process_chapter(section['Chapter'])
 
-def process_chapter(ch):
-  # Just replace with fallback host for non-HTML renderers.
-  if context['renderer'] != 'html':
-    for d in TEMPLATES_JSON:
-      ch['content'] = ch['content'].replace(d['template'], d['fallback'])
-
-  for c in ch['sub_items']:
-    process_chapter(c['Chapter'])
-
-for section in book['sections']:
-  process_chapter(section['Chapter'])
-
-# Output book immediately since we don't modify it.
+# Output modified book.
 json.dump(book, sys.stdout)
