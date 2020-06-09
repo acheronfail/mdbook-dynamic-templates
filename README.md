@@ -54,6 +54,13 @@ Bask in the glory of Dynamic Templates.
 
 ## Installation
 
+Clone this repository into your `mdbook`'s folder (next to the `book.toml` file):
+
+```bash
+cd path/to/your/book
+git clone https://github.com/acheronfail/mdbook-dynamic-templates
+```
+
 Add the following to `book.toml`:
 
 ```toml
