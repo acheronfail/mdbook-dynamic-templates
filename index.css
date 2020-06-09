@@ -1,0 +1,31 @@
+.dynamic-templates {
+  color: red;
+}
+.dynamic-templates.changed {
+  color: green;
+}
+
+#dynamic-templates-prompt {
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  right: 20%;
+  bottom: 20%;
+  z-index: 1000;
+
+  border: 2px solid var(--scrollbar);
+  border-radius: 2px;
+  background-color: var(--bg);
+  padding: 5%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+#dynamic-templates-prompt.hidden {
+  display: none;
+}
+#dynamic-templates-prompt h2 {
+  margin: 0;
+}
